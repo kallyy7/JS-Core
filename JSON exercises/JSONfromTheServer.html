@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+
+    <p id="demo"></p>
+
+    <script>
+        let xmlhttp = new XMLHttpRequest();
+
+        xmlhttp.onreadystatechange = function() {
+            let myObj = JSON.parse(this.responseText);
+            document.getElementById("demo").innerHTML = myObj.name;
+        };
+
+        xmlhttp.open("GET", "json_demo.txt", true);
+        xmlhttp.send();
+    </script>
+
+    <p> <a href="json_demo.json" target="_blank">Pesho Information</a></p>
+
+</body>
+
+</html>
